@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>DragonballProject</title>
+  <style>
+  P{
+    color:blue;
+    font-size:25px;
+    text-shadow:-10px 50px 2px yellow;/*What this does is based on the text it is assigned to it will create a shadow behind and using the first two values you are able to change its x and y axis with the third value representing it blur effect and how strong you want it to be.  */
+    animation-name:changenow; /* when the animation name is typed it will have access to the animation under that name */
+    animation-duration: 8s; /* This means how long the animation you accessed will last for */
+    animation-iteration-count: infinite; /* The animation will enter a infinite loop with it repeating every 8 seconds*/
+
+  }
+  h1{
+    font-size:40px;
+     background: linear-gradient(to right,blue, red,green); /*linear graident will set the background color to have a gradient starting from the left and ending to the right with the colors starting at blue and ending at green*/
+     -webkit-background-clip: text; /* the linear graident background will be cliped so that it only appears behind text rather then the entire background*/
+     -webkit-text-fill-color: transparent;
+  }
+  /*For body the background is using a imported image from the show dragonball it is then give it width and height for the size of the body. The background is then set to not repeat and the background size is set to 1400px meaning that it will take up that total space */
+  body {
+    background-image: url("dbz.jpg");
+    height:200px;
+    width: 1100px;
+    background-repeat: no-repeat;
+    background-size:1400px;
+  
+  }
+  /* Keyframes is what allows contains the animations with the name being used to initate it animation the percentage means that over the course of the duration as it passes that percentage it will transition it next change ex: changing from blue to red at 0% and staying red until it passes the 25%*/ 
+  @keyframes changenow{ 
+    0% {color:red}
+    25%{color:black}
+    50%{color:white}
+    75%{color:gray}
+    100%{color:yellow}
+  }
+  #sevendragonball{ /*id assigned is sevendragonball which can later be called for in the body same for the  rest of the ids*/
+    width:250px;
+    height:200px;
+     /*transform can be the scale,skew, translation and more of a shape,img, or text. By using matrix you can scale, skew and translate */
+    transform: matrix(.5,0,0,.5,170,-100); /*scaleX=.5, skewX=0,skewY=0,scaleY=.5,translate x is 170 px to the right and translateY is 100px up */
+  }
+  #sixdragonball{
+    width:250px;
+    height:200px;
+    transform: matrix(.5,0,0,.5,0,-100); /* does the same as sevendragonball except it translates 0px to the right and 100 up */
+  }
+  #fifthdragonball{
+    width:250px;
+    height:200px;
+    transform: matrix(.5,0,0,.5,390,20); /* look at id sixdragonball to understand how matrix works */
+  }
+  #fourthdragonball{
+    width:250px;
+    height:200px;
+    transform: matrix(1,0,0,1,-280,100); /* unlike the other ids the scale is its 1 for both x and y */
+    transition: width 2s, height 2s, transform 6s; /* is similar to animation except it doesn't occur automatically only when the function required to activate it occurs. It will then cange the width and height of the dragon ball in 2 seconds and the transformation will occur in a span of 6 seconds */
+  }
+  #fourthdragonball:hover { /* when you hover over the dragonball its transition will occur */
+    width: 100px;
+    height: 100px;
+    transform: matrix(.2,0,0,.2,0,-1000);
+}
+  #thirddragonball{
+    width:250px;
+    height:200px;
+    transform: matrix(.5,0,0,.5,-200,180);
+  }
+  #seconddragonball{
+    width:250px;
+    height:200px;
+    transform: matrix(.5,0,0,.5,400,180);
+  }
+  #firstdragonball{
+    width:250px;
+    height:200px;
+    transform: matrix(.5,0,0,.5,600,220);
+  }
+ 
+  </style>
+  </head>
+  
+  <body>
+    <h1> DRAGON BALL Z</h1>
+    <p>WATCH THE NEXT EPISODE OF DRAGON BALL Z NEXT WEEK</p>
+    <!--take the image source and displays it in the preview with its asssigned -->
+    <img id="firstdragonball" src="1dragon.png" alt="1db">
+     <img id="seconddragonball" src="2dragonball.png" alt="2db">
+      <img id="thirddragonball" src="3dragon.png" alt="3db">
+       <img id="fourthdragonball" src="4dragon.png" alt="4db">
+        <img id="fifthdragonball" src="5dragon.png" alt="5db">
+         <img id="sixdragonball" src="6dragon.png" alt="6db">
+          <img id="sevendragonball" src="7dragon.png" alt="7db">
+  </body>
+</html>
